@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/comics', function () {
-    return view('comics');
+    // creo la variabile "comics" che importa il mio array
+    $comics = config('comics');
+    // dico di restituire nella schermata comics l'array "comics"
+    return view('comics', compact('comics'));
 })->name('comics');
